@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 mongoose.set('strictQuery',true)
 
 const connectToDatabase = ()=>{
-    mongoose.connect('mongodb://127.0.0.1:27017/helloworld-api',{
+    mongoose.connect(process.env.MONGO_URL,{
     useNewUrlParser:true,
     useUnifiedTopology:true
 }).then((data)=>{
